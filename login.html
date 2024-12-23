@@ -79,15 +79,16 @@
         </form>
         <div class="footer">
             <p>Non hai un account? <a href="#" style="color: #ff6347;">Registrati</a></p>
+            <a href="settings.html" style="color: #ff6347;">Vai alle Impostazioni</a><br>
+            <a href="menù.html" style="color: #ff6347;">Vai al Menù</a>
         </div>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Simulazione di login: in un'app reale invieresti i dati al backend
             localStorage.setItem('loggedIn', true);
-            window.location.href = 'settings.html'; // Reindirizza alla pagina delle impostazioni
+            window.location.href = 'settings.html';
         });
     </script>
 </body>
