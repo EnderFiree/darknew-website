@@ -79,23 +79,18 @@
 
     <div class="container">
         <h2>Impostazioni del Profilo</h2>
-        
-        <!-- Impostazioni opzioni -->
         <div class="setting-option">
             <label for="username">Nome Utente:</label>
             <input type="text" id="username" value="utente123">
         </div>
-
         <div class="setting-option">
             <label for="email">Email:</label>
             <input type="email" id="email" value="utente@esempio.com">
         </div>
-
         <div class="setting-option">
             <label for="password">Nuova Password:</label>
             <input type="password" id="password">
         </div>
-
         <div class="setting-option">
             <label for="language">Lingua:</label>
             <select id="language">
@@ -103,35 +98,26 @@
                 <option value="en">Inglese</option>
             </select>
         </div>
-
         <button class="btn" onclick="saveSettings()">Salva Impostazioni</button>
 
         <div class="footer">
-            <p>Vuoi uscire? <a href="#" style="color: #ff6347;" onclick="logout()">Logout</a></p>
+            <p>Vuoi uscire? <a href="login.html" style="color: #ff6347;">Logout</a></p>
+            <a href="menù.html" style="color: #ff6347;">Vai al Menù</a>
         </div>
     </div>
 
     <script>
-        // Controllo se l'utente è loggato, altrimenti rimandiamo al login
         if (!localStorage.getItem('loggedIn')) {
-            window.location.href = 'login.html'; // Reindirizza al login se non è loggato
+            window.location.href = 'login.html';
         }
 
-        // Funzione per salvare le impostazioni (in una vera app, salveresti nel database)
         function saveSettings() {
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const language = document.getElementById('language').value;
 
-            // Simulazione del salvataggio
             alert(`Impostazioni salvate:\nNome: ${username}\nEmail: ${email}\nLingua: ${language}`);
-        }
-
-        // Funzione di logout
-        function logout() {
-            localStorage.removeItem('loggedIn');
-            window.location.href = 'login.html'; // Reindirizza al login dopo il logout
         }
     </script>
 </body>
